@@ -81,7 +81,7 @@ pipeline {
 		}
 
 		success {
-			echo "Build successful. All checks passed.:
+			echo "Build successful. All checks passed."
 		}
 	}
 }
