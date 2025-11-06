@@ -48,7 +48,7 @@ pipeline {
 					echo "Checking MD5 checksum..."
 
 					def localMd5 = sh(
-						script: "md5sum ${LOCAL_FILE} | awk '{print $1}'",
+						script: "md5sum ${LOCAL_FILE} | awk '{print \$1}'",
 					).trim()
 
 					echo "Local MD5: ${localMd5}"
