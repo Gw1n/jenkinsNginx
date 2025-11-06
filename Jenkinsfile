@@ -72,12 +72,12 @@ pipeline {
 
 		failure {
 			echo "Build failed.Sending notification..."
-			mail to: 'm.v.orekhov@gmail.com',
-			     subject: "Build failded: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-			     body: """
+			emailext to: 'm.v.orekhov@gmail.com',
+			         subject: "Build failded: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+			         body: """
 					The pipeline ${env.JOB_NAME} #${env.BUILD_NUMBER} didn't pass the checkout.
 					Check the logs: ${env.BUILD_URL}
-			     """
+			         """
 		}
 
 		success {
